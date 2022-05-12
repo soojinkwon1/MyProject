@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Contact Me";
+    ViewData["Banner"] = "Contact";
+}
+
+<div class="row g-0 justify-content-md-center mb-5">
+    <div class="col-9">
+        <h1 class="text-center display-4"> @ViewData["Title"]</h1>
+        <div class="content fs-4 lh-base">
+
+            <p class="fs-3 mb-5">@Html.Raw(ViewData["msg"])</p>
+            <p>If you have questions, feel free to send an email to me. </p>
+
+            <p>Email: maxazure@gmail.com</p>
+        </div>
+    </div>
+</div>
+
+

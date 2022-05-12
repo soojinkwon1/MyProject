@@ -1,0 +1,91 @@
+﻿@model MyWebSite.Models.ListModel
+@{
+    ViewData["Title"] = "Home Page";
+    ViewData["Banner"] = "Home";
+}
+<div class="about banner p-0">
+    <div class="p-4 p-md-5 text-white-50 bg-dark">
+        <div class="px-0 text-center">
+            <h2 class="display-4">SOOJIN KWON</h2>
+            <div class="display-6 mb-4">UI Designer</div>
+            <p class="fs-5 fw-light ps-5 pe-5 ms-5 me-5"></p>
+        </div>
+    </div>
+</div>
+
+<div class="skill pt-4 pb-5">
+    <h2 class="text-center display-5 pt-3 pb-3">Skills</h2>
+    <div class="row row-cols-3 main">
+        @foreach (var item in Model.SkillModel)
+        {
+            <div class="col pt-2 pb-2">
+                <ul class="bars_list list-unstyled lh-lg">
+                    <li class="ps-5 pe-5"><span class="float-end text-secondary">(@Html.DisplayFor(modelItem => item.Percentage)%)</span>@Html.DisplayFor(modelItem => item.Name) </li>
+                    <li class="pe-5 ps-5">
+                        <div class="progress border border-secondary bg-transparent opacity-50">
+                            <div class="progress-bar progress-bar-striped bg-secondary" role="progressbar" aria-valuenow="@item.Percentage" aria-valuemin="0" aria-valuemax="100" style="width: @item.Percentage%"></div>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        }
+    </div>
+</div>
+
+
+<div class="experience p-0">
+    <h2 class="text-center display-5 pt-5 pb-5 bg-light">Experience</h2>
+    <div class="main">
+    @foreach (var item in Model.ExperienceModel)
+    {
+        <div class="row g-0 item justify-content-md-center mt-5 pb-5 pe-0 ps-0 lh-base border-bottom">
+            <div class="col-3">
+                <ul class="list-unstyled">
+                    <li class="fs-5">@Html.DisplayFor(modelItem => item.Title)</li>
+                    <li class="fs-6 text-black-50">@Html.DisplayFor(modelItem => item.Location)</li>
+                    <li class="fs-6 text-black-50">@Html.DisplayFor(modelItem => item.Duration)</li>
+                </ul>
+            </div>
+            <div class="col-7 lh-lg">@Html.DisplayFor(modelItem => item.Description)</div>
+        </div>
+
+    }
+    </div>
+</div>
+
+<div class="row g-0 pt-5 pb-5 fs-6 justify-content-md-center messagebox">
+        <div class="col-3 text-white text-end lh-base pe-3">
+            <h1 class="fs-4">Write a message</h1>
+            <p class="opacity-75">If you have questions, feel free to enquire by using the message box on the right </p>
+            <p class="opacity-75">My profiles in social media</p>
+            
+
+        </div>
+        <div class="col-7">
+            <form asp-controller="Contact" asp-action="LeaveMessage" method="post">
+                <div class="pb-4 pt-2 row g-0">
+                    <div class="form-floating col pe-4">
+                        <input type="email" class="form-control" id="Email" name="Email" placeholder="name@example.com">
+                        <label for="Email">Email address</label>
+                    </div>
+                    <div class="form-floating col">
+                        <input type="text" class="form-control" id="FullName" name="FullName" placeholder="Your Name">
+                        <label for="FullName">Your Name</label>
+                    </div>
+                </div>
+                <div class="pb-4 form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="Message" name="Message" style="height: 100px"></textarea>
+                    <label for="Message">Message</label>
+                </div>
+                <div class="pb-4"><button type="submit" class="btn btn-light text-uppercase">send a message</button></div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+

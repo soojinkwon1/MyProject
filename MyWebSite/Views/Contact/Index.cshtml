@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Contact Me";
+    ViewData["Banner"] = "Contact Me";
+}
+<partial name="_Banner" />
+<div class="main">
+    <div class="row g-0 justify-content-md-center mb-5">
+        <div class="col-9">
+            <div class="content fs-4 lh-base">
+
+                <p> I can be reached anytime via email or by mobile phone. Please feel free to reach out if you have any questions.</p>
+                <p>Phone : 02040161720 </p>
+
+                <p>Email: soojinkwon96@gmail.com</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-0 pt-5 pb-5 fs-6 justify-content-md-center messagebox">
+        <div class="col-3 text-white text-end lh-lg pe-3">
+            <h1 class="fs-4">Write a message</h1>
+            <p>If you have questions, feel free to enquire by using the message box on the right </p>
+            <p>My profiles in social media</p>
+
+        </div>
+        <div class="col-6">
+            <form asp-controller="Contact" asp-action="LeaveMessage" method="post">
+                <div class="pb-4 pt-2 row g-0">
+                    <div class="form-floating col pe-4">
+                        <input type="email" class="form-control" id="Email" name="Email" placeholder="name@example.com">
+                        <label for="Email">Email address</label>
+                    </div>
+                    <div class="form-floating col">
+                        <input type="text" class="form-control" id="FullName" name="FullName" placeholder="Your Name">
+                        <label for="FullName">Your Name</label>
+                    </div>
+                </div>
+                <div class="pb-4 form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="Message" name="Message" style="height: 100px"></textarea>
+                    <label for="Message">Message</label>
+                </div>
+                <div class="pb-4"><button type="submit" class="btn btn-light text-uppercase">send a message</button></div>
+            </form>
+        </div>
+    </div>
+</div>

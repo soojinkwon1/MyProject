@@ -1,0 +1,54 @@
+1html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #f4c2c2;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    color: #f4c2c2;
+}
+.nav-item {
+    margin-right: 1.25rem;
+}
+.nav-link {
+    font-size: 1.15rem;
+}
+.main {
+    font-size: 20px;
+    font-family: charter, Georgia, Cambria, Impact, Times, serif;
+    color: rgba(41, 41, 41, 1);
+}
+.messagebox {
+    background-color: #808080;
+}
+
+.progress:not(.hover) .progress-bar {
+  width: 0 !important;
+}
+
+.progress.hover .progress-bar {
+  -webkit-transition: all 1.3s ease-in-out;
+  -moz-transition: all 1.3s ease-in-out;
+  -o-transition: all 1.3s ease-in-out;
+  transition: all 1.3s ease-in-out;
+}
+
+
+
+
+

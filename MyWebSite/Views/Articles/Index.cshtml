@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MyWebSite.Models.Article>
+
+@{
+    ViewData["Title"] = "My Article";
+    ViewData["Banner"] = "Thoughts";
+}
+<partial name="_Banner" />
+<div class="main">
+    <div class="row justify-content-md-center">
+        <div class="col-9">
+            <div class="p-4 text-black bg-light fs-5 lh-base mb-5 text-black-50">
+                I’ve built and launched more than 30 projects. Since graduating from University, I have worked at tech companies in China and progressed from a junior to senior engineer. This ultimately lead to my being appointed to a position as head of engineering at a software company in Beijing.
+            </div>
+        </div>
+        <div class="row item justify-content-md-center mb-5 lh-base">
+            @foreach (var item in Model)
+            {
+                <div class="col-9 mb-4">
+                    <h2 class="display-7">
+                        <a asp-action="Details" asp-route-id="@item?.Id">
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </a>
+                    </h2>
+                    <div class="fs-5 lh-base"> @Html.Raw(Markdig.Markdown.ToHtml(item.Body))</div>
+                </div>
+
+
+            }
+        </div>
+    </div>
+</div>
+
+
